@@ -4,27 +4,58 @@
 'name': 'TodoTXT'
 'patterns': [
   {
-    'match': '^\\([A-Z]\\)'
+    # Strike through highlighting by surrounding some text inside task with '~~'
+    # Note: Strike through & row code highlightings tested with Pubster theme only
+    'match': '(?<=\\s|\\S)~~.*?~~(?=\\s|\\S)'
+    'name': 'markup.strike'
+  }
+  {
+    # Raw code highlighting by surrounding some text inside task with '`'
+    # Note: Strikethrough & row code highlightings tested with Pubster theme only
+    'match': '(?<=\\s|\\S)`.*?`(?=\\S|\\s)'
+    'name': 'markup.code'
+  }
+  {
+    'match': '^\\s*?\\([A-Z]\\)'
     'name': 'constant.language.todotxt.priority'
   }
   {
-    'match': 't:\\d{4}-\\d{2}-\\d{2}'
+    'match': '(\\s+?|^)t:\\d{4}-\\d{2}-\\d{2}'
     'name': 'constant.language.todotxt.date'
   }
   {
-    'match': 'due:\\d{4}-\\d{2}-\\d{2}'
+    'match': '(\\s+?|^)due:\\d{4}-\\d{2}-\\d{2}'
     'name': 'constant.language.todotxt.due'
   }
   {
-    'match': '\\@\\S*'
+    # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
+    # Also excluding intersection with 'http(s)' prefix detecting
+    'match': '(\\s+?|^)[^:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s]+?:[^:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s]+?(?=\\s)'
+    'name': 'constant.language.todotxt.extension'
+  }
+  {
+    # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
+    'match': '(\\s+?|^)\\@[^:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s]+?(?=\\s)'
     'name': 'entity.name.tag.todotxt.context'
   }
   {
-    'match': '\\+\\S*'
+    # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
+    'match': '(\\s+?|^)\\+[^:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s]+?(?=\\s)'
     'name': 'entity.name.tag.todotxt.project'
   }
   {
-    'match': '^x\\s.*$'
+    # Allow Cyrillic letter 'x'
+    'match': '^\\s*?(x|х|х)\\s.*$'
+    'name': 'comment.line.todotxt'
+  }
+  {
+    # Undone (failed or canceled) tasks by '-' instead of 'x'
+    'match': '^\\s*?-\\s.*$'
+    'name': 'markup.strike'
+  }
+  {
+    # Comments by '#' at front of the line
+    'match': '^\\s*?#.*$'
     'name': 'comment.line.todotxt'
   }
 ]
