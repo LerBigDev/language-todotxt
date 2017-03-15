@@ -1,11 +1,34 @@
 {
   "name": "language-todotxt",
-  "version": "0.6.1",
+  "version": "0.8.0",
   "description": "Syntax Highlighting for todo.txt",
-  "repository": "https://github.com/gerane/language-todotxt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerane/language-todotxt.git"
+  },
   "license": "BSD",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "readme": "# language-todotxt package\n\nAdds syntax highlighting to todo.txt files in atom.\n\nOriginally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle) from the [tmTodoTXT TextMate bundle](https://github.com/sideshowcoder/tmTodoTXT).\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/gerane/language-todotxt/issues"
+  },
+  "homepage": "https://github.com/gerane/language-todotxt#readme",
+  "_id": "language-todotxt@0.6.1",
+  "_shasum": "5e13a6e4f244601fa31d726c8106ab80b75e628c",
+  "_resolved": "file:..\\d-116614-708-1e1zhj9\\package.tgz",
+  "_from": "..\\d-116614-708-1e1zhj9\\package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
 }

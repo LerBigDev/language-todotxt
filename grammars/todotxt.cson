@@ -4,8 +4,8 @@
 'name': 'TodoTXT'
 'patterns': [
   {
-    # Strike through highlighting by surrounding some text inside task with '~~'
-    # Note: Strike through & row code highlightings tested with Pubster theme only
+    # Strikethrough highlighting by surrounding some text inside task with '~~'
+    # Note: Strikethrough & row code highlightings tested with Pubster theme only
     'match': '(?<=\\s|\\S)~~.*?~~(?=\\s|\\S)'
     'name': 'markup.strike'
   }
