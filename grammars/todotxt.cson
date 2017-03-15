@@ -24,23 +24,27 @@
     'name': 'constant.language.todotxt.date'
   }
   {
+    'match': '\\d{4}-\\d{2}-\\d{2}'
+    'name': 'constant.language.todotxt.date'
+  }
+  {
     'match': '(\\s+?|^)due:\\d{4}-\\d{2}-\\d{2}'
     'name': 'constant.language.todotxt.due'
   }
   {
     # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
     # Also excluding intersection with 'http(s)' prefix detecting
-    'match': '(\\s+?|^)[^:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s]+?:[^:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s]+?(?=\\s)'
+    'match': '(?=>[:^,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s])\\S+?:\\S+?(?=[:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s])'
     'name': 'constant.language.todotxt.extension'
   }
   {
     # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
-    'match': '(\\s+?|^)\\@[^:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s]+?(?=\\s)'
+    'match': '(\\s+?|^)\\@\\S+?(?=[:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s])'
     'name': 'entity.name.tag.todotxt.context'
   }
   {
     # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
-    'match': '(\\s+?|^)\\+[^:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s]+?(?=\\s)'
+    'match': '(\\s+?|^)\\+\\S+?(?=[:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s])'
     'name': 'entity.name.tag.todotxt.project'
   }
   {
@@ -49,7 +53,7 @@
     'name': 'comment.line.todotxt'
   }
   {
-    # Undone (failed or canceled) tasks by '-' instead of 'x'
+    # Undone (failed or canceled) task state by '-' instead of 'x'
     'match': '^\\s*?-\\s.*$'
     'name': 'markup.strike'
   }
