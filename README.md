@@ -8,6 +8,17 @@ Originally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle)
 
 I (LerDev) add some new features for better look & feel, also get some of them from GFM version of Markdown
 
+Full list of new improvements:
+
+- Add "undone, failed or canceled" task state by `-` instead of `x`
+- Add strikethrough highlighting
+- Add raw code highlighting
+- Add comments by `#`
+- Allow Cyrillic letter `x`
+- Improve regex parser for context `@`, project `+` & extension `:`
+
+
+
 ## Usage
 
 For more comprehensive info about Todo.txt markup see [this](https://github.com/ginatrapani/todo.txt-cli)
