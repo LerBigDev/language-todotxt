@@ -1,6 +1,6 @@
 {
   "name": "language-todotxt-extended",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Syntax highlighting for todo.txt files with some extensions",
   "repository": {
     "type": "git",
