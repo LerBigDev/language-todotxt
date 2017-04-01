@@ -1,6 +1,17 @@
-# language-todotxt package
+# language-todotxt-extended package
 
 Adds syntax highlighting to todo.txt files in atom.
+
+New improvements (compared with original `language-todotxt`):
+
+- Add "undone, failed or canceled" task state by `-` instead of `x`
+- Add strikethrough highlighting
+- Add raw code highlighting
+- Add comments by `#`
+- Allow Cyrillic letter `x`
+- Improve regex parser for context `@`, project `+` & extension `:`
+
+Fork from [language-todotxt](https://atom.io/packages/language-todotxt) package.
 
 Originally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle) from the [tmTodoTXT TextMate bundle](https://github.com/sideshowcoder/tmTodoTXT).
 
