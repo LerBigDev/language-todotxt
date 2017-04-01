@@ -11,7 +11,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {},
-  "readme": "# language-todotxt-extended package\n\nAdds syntax highlighting to todo.txt files in atom.\n\nNew improvements (compared with original `language-todotxt`):\n\n- Add "undone, failed or canceled" task state by `-` instead of `x`\n- Add strikethrough highlighting\n- Add raw code highlighting\n- Add comments by `#`\n- Allow Cyrillic letter `x`\n- Improve regex parser for context `@`, project `+` & extension `:`\n\nFork from [language-todotxt](https://atom.io/packages/language-todotxt) package.\n\nOriginally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle) from the [tmTodoTXT TextMate bundle](https://github.com/sideshowcoder/tmTodoTXT).",
+  "readme": "# language-todotxt-extended package\n\nAdds syntax highlighting to todo.txt files in atom.\n\nNew improvements (compared with original `language-todotxt`):\n\n- Add \"undone, failed or canceled\" task state by `-` instead of `x`\n- Add strikethrough highlighting\n- Add raw code highlighting\n- Add comments by `#`\n- Allow Cyrillic letter `x`\n- Improve regex parser for context `@`, project `+` & extension `:`\n\nFork from [language-todotxt](https://atom.io/packages/language-todotxt) package.\n\nOriginally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle) from the [tmTodoTXT TextMate bundle](https://github.com/sideshowcoder/tmTodoTXT).",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/LerBigDev/language-todotxt-extended/issues"
