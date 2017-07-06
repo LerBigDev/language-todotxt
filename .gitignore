@@ -1,5 +1,18 @@
+# =========================
+# Common Files
+# =========================
+
 # Releases folder
 .releases/
+
+
+
+# =========================
+# Operating System Files
+# =========================
+
+# WIN
+# =========================
 
 # Windows image file caches
 Thumbs.db
@@ -16,10 +29,6 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
-# =========================
-# Operating System Files
-# =========================
 
 # OSX
 # =========================

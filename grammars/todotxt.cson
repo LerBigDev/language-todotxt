@@ -4,62 +4,148 @@
 'name': 'TodoTXT'
 'patterns': [
   {
-    # Strikethrough highlighting by surrounding some text inside task with '~~'
-    # Note: Strikethrough & row code highlightings tested with Pubster theme only
-    'match': '(?<=\\s|\\S)~~.*?~~(?=\\s|\\S)'
-    'name': 'markup.strike'
+    # Strikethrough
+    # Example:
+    #
+    # ```
+    # ~~foo bar foo~~`
+    # ```
+    'match': '(?<=^|\\s|\\S)~~.*?~~(?=\\s|\\S)'
+    'name': 'markup.comment.strike'
   }
   {
-    # Raw code highlighting by surrounding some text inside task with '`'
-    # Note: Strikethrough & row code highlightings tested with Pubster theme only
-    'match': '(?<=\\s|\\S)`.*?`(?=\\S|\\s)'
+    # Raw
+    # Example:
+    #
+    # ```
+    # `foo bar`
+    # ```
+    'match': '(?<=^|\\s|\\S)`.*?`(?=\\S|\\s)'
     'name': 'markup.code'
   }
   {
+    # Emphasis
+    # Example:
+    #
+    # ```
+    # _foo bar_
+    # ```
+    'match': '(?<=^|\\s|\\S)_.*?_(?=\\S|\\s)'
+    'name': 'markup.italic'
+  }
+  {
+    # Strong
+    # Example:
+    #
+    # ```
+    # **foo bar**
+    # ```
+    'match': '(?<=^|\\s|\\S)\\*\\*.*?\\*\\*(?=\\S|\\s)'
+    'name': 'markup.bold'
+  }
+  {
+    # Priority
+    # Example:
+    #
+    # ```
+    # A foo bar
+    # ```
     'match': '^\\s*?\\([A-Z]\\)'
     'name': 'constant.language.todotxt.priority'
   }
   {
-    'match': '(\\s+?|^)t:\\d{4}-\\d{2}-\\d{2}'
+    # Date 1
+    # Example:
+    #
+    # ```
+    # t:yyyy-mm-dd
+    # ```
+    'match': '(?<=\\s|^)t:\\d{4}-\\d{2}-\\d{2}(?=\\s)'
     'name': 'constant.language.todotxt.date'
   }
   {
-    'match': '\\d{4}-\\d{2}-\\d{2}'
+    # Date 2
+    # Example:
+    #
+    # ```
+    # yyyy-mm-dd
+    # ```
+    'match': '(?<=\\s|^)\\d{4}-\\d{2}-\\d{2}(?=\\s)'
     'name': 'constant.language.todotxt.date'
   }
   {
-    'match': '(\\s+?|^)due:\\d{4}-\\d{2}-\\d{2}'
+    # Due to date
+    # Example:
+    #
+    # ```
+    # due:yyyy-mm-dd
+    # ```
+    'match': '(?<=\\s|^)due:\\d{4}-\\d{2}-\\d{2}(?=\\s)'
     'name': 'constant.language.todotxt.due'
   }
   {
-    # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
-    # Also excluding intersection with 'http(s)' prefix detecting
-    'match': '(?=>[:^,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s])\\S+?:\\S+?(?=[:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s])'
+    # Extension
+    # Excluding intersection with 'http(s)' prefix detecting
+    # Example:
+    #
+    # ```
+    # bar goo-bar:foo-bar
+    # ```
+    'match': '(?<!http:\\/\\/)(?<=\\s|^)[-a-zA-Zа-яА-Яії]+:[-a-zA-Zа-яА-Яії]+(?=\\s)'
     'name': 'constant.language.todotxt.extension'
   }
   {
-    # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
-    'match': '(\\s+?|^)\\@\\S+?(?=[:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s])'
+    # Context
+    # Example:
+    #
+    # ```
+    # foo bar @goo
+    # bar @foo-boo
+    # ```
+    'match': '(?<=\\s|^)@[-a-zA-Zа-яА-Яії]+?(?=\\s)'
     'name': 'entity.name.tag.todotxt.context'
   }
   {
-    # Allow to contain only words & following symbols: '&', '-', '_' (with excluding other symbols)
-    'match': '(\\s+?|^)\\+\\S+?(?=[:,\\.\'?!\\*\\+@"\\$\\(\\)\\[\\]\\{\\}`#^=\\\\\/<>|;%~\\s])'
+    # Project
+    # Example:
+    #
+    # ```
+    # foo bar +goo
+    # bar +foo-boo
+    # ```
+    'match': '(?<=\\s|^)\\+[-a-zA-Zа-яА-Яії]+?(?=\\s)'
     'name': 'entity.name.tag.todotxt.project'
   }
   {
     # Allow Cyrillic letter 'x'
+    # Example:
+    #
+    # ```
+    # x foo bar
+    # ```
     'match': '^\\s*?(x|х|х)\\s.*$'
     'name': 'comment.line.todotxt'
   }
   {
-    # Undone (failed or canceled) task state by '-' instead of 'x'
+    # Failed
+    # Failed, canceled or just ended task state by '-' instead of 'x'
+    # Example:
+    #
+    # ```
+    # - foo bar
+    # ```
     'match': '^\\s*?-\\s.*$'
-    'name': 'markup.strike'
+    'name': 'markup.comment.strike'
   }
   {
-    # Comments by '#' at front of the line
-    'match': '^\\s*?#.*$'
+    # Comments
+    # Example:
+    #
+    # ```
+    # # foo bar
+    # bar bar  # goo
+    # ```
+    'match': '#.*$'
     'name': 'comment.line.todotxt'
   }
 ]

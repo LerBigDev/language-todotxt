@@ -1,93 +1,66 @@
-# language-todotxt-extended package
+# Language Todo.TXT Plus - Syntax Highlighting Atom Plugin
 
-Adds syntax highlighting to todo.txt files in atom.
+This is for comfort work with Todo.TXT-formatted `*.txt` files.
 
-New improvements (compared with original `language-todotxt`):
-
-- Add "undone, failed or canceled" task state by `-` instead of `x`
-- Add strikethrough highlighting
-- Add raw code highlighting
-- Add comments by `#`
-- Allow Cyrillic letter `x`
-- Improve regex parser for context `@`, project `+` & extension `:`
-
-Fork from [language-todotxt](https://atom.io/packages/language-todotxt) package.
-
-Originally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle) from the [tmTodoTXT TextMate bundle](https://github.com/sideshowcoder/tmTodoTXT).
-
-## New Features
-
-I (LerDev) add some new features for better look & feel, also get some of them from GFM version of Markdown
-
-Full list of new improvements:
-
-- Add "undone, failed or canceled" task state by `-` instead of `x`
-- Add strikethrough highlighting
-- Add raw code highlighting
-- Add comments by `#`
-- Allow Cyrillic letter `x`
-- Improve regex parser for context `@`, project `+` & extension `:`
+If you doesn't know anything about Todo.TXT, go to [TodoTXT.com](http://todotxt.com) & read all about it! It's worth it :smile:
 
 
+## Features
 
-## Usage
+- Support of Ukrainian & Russian symbols
+- Add **comments**, **failed tasks**, **bold** & **itlaic** emphasis, **raw**, **strikethrought**
+- Projects, contexts & extensions can contant only letters & `-` (dash): `foo-bar:goo-moo @foo-bar +goo-moo`
+- Support of indentations
 
-For more comprehensive info about Todo.txt markup see [this](https://github.com/ginatrapani/todo.txt-cli)
-
-Here we consider only examples of additional features
-
-### Undone, canceled
-
-If you need to mark task as undone or canceled (failed :), use `-` (dash) instead of `x`. Example:
-
-```
-- (A) 2010-01-01 due:2011-01-01 Lorem ipsum lorem ipsum 
-```
-
-Must render something like this:
-
-~~(A) 2010-01-01 due:2011-01-01 Lorem ipsum lorem ipsum~~
+  ```TodoTXT
+  foo bar @Monaco
+    goo doo +zoo
+  ```
 
 
-### Raw in-line code
+## Very Quick Usage Guide
 
-If you need to insert some in-line raw code, & want that it was properly emphasized. Example:
-	
-```
-(A) 2010-01-01 Lorem ipsum `lorem_i = ipsum * 2 - ipsm($lorem)`
-```
+Syntax        | Description     | Example
+---           | ---             | ---
+`~~...~~`     | Strikethrough   | `~~foo bar~~`
+`**...**`     | Bold            | `bar **foo** goo`
+`_..._`       | italic          | `bar _foo_ goo`
+`- ...`       | Failed task     | `- foo bar task @prj`
+`x ...`       | Complited task  | `x foo bar +task`
+`+{prj-name}` | Project         | 
+`@{context}`  | Context         | 
+`{param}:{value}` | Extension   | 
+`t:{yyyy-mm-dd}` | Date, way 1  | `foo t:2017-07-06 bar` 
+`{yyyy-mm-dd}` | Date, way 2    | `foo 2017-07-06 bar`
+`due:{yyyy-mm-dd}` | Due to date | `foo due:2017-07-06 bar`
+`(A-Z) ...`   | Priority        | `(A) foo @bar goo` 
+~             | ~               | `(B) goo @joo noo` 
+`... # ...`   | Comments        | ` foo  # bar`
 
-Result:
 
-(A) 2010-01-01 Lorem ipsum `lorem_i = ipsum * 2 - ipsm($lorem)`
 
-### Comments
+## Big Example
 
-Use `#` to comment all that follows the `#` (hash). Example:
+```TodoTXT
+(A) buy **milk** @house-tasks +im-good-man
+(Z) fix ~~the chair~~ the table @house-tasks
+(B) _go for a walk_ with dog +im-good-man
 
-```
-# That was very useful comment
-(A) 2010-01-01 Lorem ipsum lorem +ipsum
+do some big project +project-name due:2017-12-31
+  some part of the project @important
+    deeper indention @too-deep
+  another **part** of the projec, with code `int main()`
+  x complited part of +project-name
+  - faild part
+  
+2017-07-06 this is another task with some-param:some-value
+x 2017-06-01 2016-05-21 due:2017-08-31 some ended task with ending date
 ```
 
-Must be render as common comment line in any programming language
-
-### Better Cyrillic support
-
-So now you can use russian (ukrainian) `x` for mark task as done
-
-### Improve regex parser for context '@', project '+' & extension ':'
-
-All of the above tags can content only those charactes & symbols: `[a-zA-Z0-9]`, `-` (dash), `&`, `_`. Also any other symbol will stop highlighting of tag, thus, you can write senteces like this:
-
-```
-(A) 2010-01-01 Lorem ipsum lorem +ipsum-lorem: ipsum @lorem!!!
-```
-
-, where `:` & `!!!` doesn't highlighted as project & context respectively!
 
 
+## Support
 
-## Themes With Full Support Of New Features
+For more info, write me: `git.lerbigdev at gmail.com`
 
-I currently tested this version only with Atom's [Pubster Syntax](https://github.com/plttn/pubster-syntax), which also has full support of Atom's [Language Markdown](https://atom.io/packages/language-markdown), so I recommend it for usage with Todo.txt & Language Markdown
+With best regards, your LerDev :smile:
