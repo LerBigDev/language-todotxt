@@ -10,7 +10,7 @@
     # ```
     # ~~foo bar foo~~`
     # ```
-    'match': '(?<=^|\\s|\\S)~~.*?~~(?=\\s|\\S)'
+    'match': '(?<=^|\\s|\\S)~~.+?~~(?=\\s|\\S)'
     'name': 'markup.comment.strike'
   }
   {
@@ -20,7 +20,7 @@
     # ```
     # `foo bar`
     # ```
-    'match': '(?<=^|\\s|\\S)`.*?`(?=\\S|\\s)'
+    'match': '(?<=^|\\s|\\S)`.+?`(?=\\S|\\s)'
     'name': 'markup.code'
   }
   {
@@ -30,7 +30,7 @@
     # ```
     # _foo bar_
     # ```
-    'match': '(?<=^|\\s|\\S)_.*?_(?=\\S|\\s)'
+    'match': '(?<=^|\\s|\\S)_.+?_(?=\\S|\\s)'
     'name': 'markup.italic'
   }
   {
@@ -40,7 +40,7 @@
     # ```
     # **foo bar**
     # ```
-    'match': '(?<=^|\\s|\\S)\\*\\*.*?\\*\\*(?=\\S|\\s)'
+    'match': '(?<=^|\\s|\\S)\\*\\*.+?\\*\\*(?=\\S|\\s)'
     'name': 'markup.bold'
   }
   {
@@ -74,6 +74,26 @@
     'name': 'constant.language.todotxt.date'
   }
   {
+    # Date time 1
+    # Example:
+    #
+    # ```
+    # hh-mm
+    # ```
+    'match': '(?<=\\s|^)\\d{2}-\\d{2}(?=\\s)'
+    'name': 'constant.language.todotxt.date'
+  }
+  {
+    # Date time period
+    # Example:
+    #
+    # ```
+    # hh-mm-hh-mm
+    # ```
+    'match': '(?<=\\s|^)\\d{2}-\\d{2}-\\d{2}-\\d{2}(?=\\s)'
+    'name': 'constant.language.todotxt.date'
+  }
+  {
     # Due to date
     # Example:
     #
@@ -91,7 +111,17 @@
     # ```
     # bar goo-bar:foo-bar
     # ```
-    'match': '(?<!http:\\/\\/)(?<=\\s|^)[-a-zA-Zа-яА-Яії]+:[-a-zA-Zа-яА-Яії]+(?=\\s)'
+    'match': '(?<!http:\\/\\/)(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)[-a-zA-Zа-яА-Я0-9ії]+?:[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
+    'name': 'constant.language.todotxt.extension'
+  }
+  {
+    # Extension with quotes
+    # Example:
+    #
+    # ```
+    # bar 'goo bar':'foo bar'
+    # ```
+    'match': '(?<=^|[^-a-zA-Zа-яА-Я0-9ії])[-a-zA-Zа-яА-Я0-9ії]+?:\'.+?\'(?=\\S|\\s)'
     'name': 'constant.language.todotxt.extension'
   }
   {
@@ -102,8 +132,18 @@
     # foo bar @goo
     # bar @foo-boo
     # ```
-    'match': '(?<=\\s|^)@[-a-zA-Zа-яА-Яії]+?(?=\\s)'
+    'match': '(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)@[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
     'name': 'entity.name.tag.todotxt.context'
+  }
+  {
+    # Context with quotes
+    # Example:
+    #
+    # ```
+    # bar @'foo bar'
+    # ```
+    'match': '(?<=^|\\s|\\S)@\'.+?\'(?=\\S|\\s)'
+    'name': 'constant.language.todotxt.extension'
   }
   {
     # Project
@@ -113,8 +153,18 @@
     # foo bar +goo
     # bar +foo-boo
     # ```
-    'match': '(?<=\\s|^)\\+[-a-zA-Zа-яА-Яії]+?(?=\\s)'
+    'match': '(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)\\+[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
     'name': 'entity.name.tag.todotxt.project'
+  }
+  {
+    # Project with quotes
+    # Example:
+    #
+    # ```
+    # bar +'foo bar'
+    # ```
+    'match': '(?<=^|\\s|\\S)\\+\'.+?\'(?=\\S|\\s)'
+    'name': 'constant.language.todotxt.extension'
   }
   {
     # Allow Cyrillic letter 'x'

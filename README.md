@@ -27,14 +27,16 @@ Syntax        | Description     | Example
 `_..._`       | italic (emphasis) | `bar _foo_ goo`
 `- ...`       | Failed task     | `- foo bar task @prj`
 `x ...`       | Complited task  | `x foo bar +task`
-`+{prj-name}` | Project         | 
-`@{context}`  | Context         | 
-`{param}:{value}` | Extension   | 
+`+{prj-name}` | Project         | `+foo-bar`, `+'foo bar'`
+`@{context}`  | Context         | `@foo-bar`, `@'foo bar'`
+`{param}:{value}` | Extension   | `some-param:some-value`, `param:'some value'`
 `t:{yyyy-mm-dd}` | Date, way 1  | `foo t:2017-07-06 bar` 
 `{yyyy-mm-dd}` | Date, way 2    | `foo 2017-07-06 bar`
+`{hh-mm}`     | Time date       | `11-30`
+`{hh-mm-hh-mm}` | Time date period | `11-30-12-30`
 `due:{yyyy-mm-dd}` | Due to date | `foo due:2017-07-06 bar`
 `(A-Z) ...`   | Priority        | `(A) foo @bar goo` 
-~             | ~               | `(B) goo @joo noo` 
+~             | ~               | `(B) goo @joo noo`
 `... # ...`   | Comments        | ` foo  # bar`
 
 Also, you can use **inline raw code**:
