@@ -11,7 +11,7 @@
     # ~~foo bar foo~~`
     # ```
     'match': '(?<=^|\\s|\\S)~~.+?~~(?=\\s|\\S)'
-    'name': 'markup.comment.strike'
+    'name': 'markup.comment.strike.todotxt'
   }
   {
     # Raw
@@ -21,7 +21,7 @@
     # `foo bar`
     # ```
     'match': '(?<=^|\\s|\\S)`.+?`(?=\\S|\\s)'
-    'name': 'markup.code'
+    'name': 'markup.code.todotxt'
   }
   {
     # Emphasis
@@ -31,7 +31,7 @@
     # _foo bar_
     # ```
     'match': '(?<=^|\\s|\\S)_.+?_(?=\\S|\\s)'
-    'name': 'markup.italic'
+    'name': 'markup.italic.todotxt'
   }
   {
     # Strong
@@ -41,7 +41,7 @@
     # **foo bar**
     # ```
     'match': '(?<=^|\\s|\\S)\\*\\*.+?\\*\\*(?=\\S|\\s)'
-    'name': 'markup.bold'
+    'name': 'markup.bold.todotxt'
   }
   {
     # Priority
@@ -185,7 +185,7 @@
     # - foo bar
     # ```
     'match': '^\\s*?-\\s.*$'
-    'name': 'markup.comment.strike'
+    'name': 'markup.comment.strike.todotxt'
   }
   {
     # Comments
