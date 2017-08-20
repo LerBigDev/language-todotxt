@@ -60,7 +60,7 @@
     # ```
     # t:yyyy-mm-dd
     # ```
-    'match': '(?<=\\s|^)t:\\d{4}-\\d{2}-\\d{2}(?=\\s)'
+    'match': '(?<=\\s|[^0-9]|^)t:\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.todotxt.date'
   }
   {
@@ -70,7 +70,7 @@
     # ```
     # yyyy-mm-dd
     # ```
-    'match': '(?<=\\s|^)\\d{4}-\\d{2}-\\d{2}(?=\\s)'
+    'match': '(?<=\\s|[^0-9]|^)\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.todotxt.date'
   }
   {
@@ -80,7 +80,7 @@
     # ```
     # hh-mm
     # ```
-    'match': '(?<=\\s|^)\\d{2}-\\d{2}(?=\\s)'
+    'match': '(?<=\\s|[^0-9]|^)\\d{2}-\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.todotxt.date'
   }
   {
@@ -90,7 +90,7 @@
     # ```
     # hh-mm-hh-mm
     # ```
-    'match': '(?<=\\s|^)\\d{2}-\\d{2}-\\d{2}-\\d{2}(?=\\s)'
+    'match': '(?<=\\s|[^0-9]|^)\\d{2}-\\d{2}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.todotxt.date'
   }
   {
@@ -100,7 +100,7 @@
     # ```
     # due:yyyy-mm-dd
     # ```
-    'match': '(?<=\\s|^)due:\\d{4}-\\d{2}-\\d{2}(?=\\s)'
+    'match': '(?<=\\s|[^0-9]|^)due:\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.todotxt.due'
   }
   {
