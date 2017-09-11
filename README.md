@@ -1,16 +1,16 @@
-# Language Todo.TXT Plus - Syntax Highlight For Todo.TXT
+# Language Todo.TXT Plus - Syntax highlighting for Todo.TXT
 
 This is for comfort work with Todo.TXT-formatted `*.txt` files.
 
-If you doesn't know anything about Todo.TXT, go to [TodoTXT.com](http://todotxt.com) & read all about it! It's worth it :smile:
+If you don't know anything about Todo.TXT, go to [TodoTXT.com](http://todotxt.com) and read all about it! It's worth it. :smile:
 
 
 ## Features
 
 - Support of Ukrainian & Russian symbols
-- Add **comments**, **failed tasks**, **bold** & **itlaic** emphasis, **raw**, **strikethrought**
-- Projects, contexts & extensions can contant only letters & `-` (dash): `foo-bar:goo-moo @foo-bar +goo-moo`
-- Support of indentations
+- Add **comments**, **failed tasks**, **bold** & **italic** emphasis, **raw**, **strikethrough**
+- Projects, contexts and extensions can contain only letters and dashes: `foo-bar:goo-moo @foo-bar +goo-moo`
+- Support of indentation
 
   ```TodoTXT
   foo bar @Monaco
@@ -26,7 +26,7 @@ Syntax        | Description     | Example
 `**...**`     | Bold (strong)   | `bar **foo** goo`
 `_..._`       | italic (emphasis) | `bar _foo_ goo`
 `- ...`       | Failed task     | `- foo bar task @prj`
-`x ...`       | Complited task  | `x foo bar +task`
+`x ...`       | Completed task  | `x foo bar +task`
 `+{prj-name}` | Project         | `+foo-bar`, `+'foo bar'`
 `@{context}`  | Context         | `@foo-bar`, `@'foo bar'`
 `{param}:{value}` | Extension   | `some-param:some-value`, `param:'some value'`
@@ -57,9 +57,9 @@ foo `bar goo` hoo
 do some big project +project-name due:2017-12-31
   some part of the project @important
     deeper indention @too-deep
-  another **part** of the projec, with code `int main()`
-  x complited part of +project-name
-  - faild part
+  another **part** of the project, with code `int main()`
+  x completed part of +project-name
+  - failed part
   
 2017-07-06 this is another task with some-param:some-value
 x 2017-06-01 2016-05-21 due:2017-08-31 some ended task with ending date
