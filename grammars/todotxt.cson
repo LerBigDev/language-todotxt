@@ -1,5 +1,5 @@
 'fileTypes': [
-  'txt'
+  'todo.txt'
 ]
 'name': 'TodoTXT'
 'patterns': [
