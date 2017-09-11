@@ -1,7 +1,8 @@
+'name': 'TodoTXT'
+'scopeName': 'text.todotxt'
 'fileTypes': [
   'todo.txt'
 ]
-'name': 'TodoTXT'
 'patterns': [
   {
     # Strikethrough
@@ -51,7 +52,7 @@
     # A foo bar
     # ```
     'match': '^\\s*?\\([A-Z]\\)'
-    'name': 'constant.language.todotxt.priority'
+    'name': 'constant.language.priority.todotxt'
   }
   {
     # Date 1
@@ -61,7 +62,7 @@
     # t:yyyy-mm-dd
     # ```
     'match': '(?<=\\s|[^0-9]|^)t:\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
-    'name': 'constant.language.todotxt.date'
+    'name': 'constant.language.date.todotxt'
   }
   {
     # Date 2
@@ -71,7 +72,7 @@
     # yyyy-mm-dd
     # ```
     'match': '(?<=\\s|[^0-9]|^)\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
-    'name': 'constant.language.todotxt.date'
+    'name': 'constant.language.date.todotxt'
   }
   {
     # Date time 1
@@ -81,7 +82,7 @@
     # hh-mm
     # ```
     'match': '(?<=\\s|[^0-9]|^)\\d{2}-\\d{2}(?=\\s|[^0-9])'
-    'name': 'constant.language.todotxt.date'
+    'name': 'constant.language.date.todotxt'
   }
   {
     # Date time period
@@ -91,7 +92,7 @@
     # hh-mm-hh-mm
     # ```
     'match': '(?<=\\s|[^0-9]|^)\\d{2}-\\d{2}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
-    'name': 'constant.language.todotxt.date'
+    'name': 'constant.language.date.todotxt'
   }
   {
     # Due to date
@@ -101,7 +102,7 @@
     # due:yyyy-mm-dd
     # ```
     'match': '(?<=\\s|[^0-9]|^)due:\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
-    'name': 'constant.language.todotxt.due'
+    'name': 'constant.language.due.todotxt'
   }
   {
     # Extension
@@ -112,7 +113,7 @@
     # bar goo-bar:foo-bar
     # ```
     'match': '(?<!http:\\/\\/)(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)[-a-zA-Zа-яА-Я0-9ії]+?:[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
-    'name': 'constant.language.todotxt.extension.function'
+    'name': 'constant.language.extension.function.todotxt'
   }
   {
     # Extension with quotes
@@ -122,7 +123,7 @@
     # bar 'goo bar':'foo bar'
     # ```
     'match': '(?<=^|[^-a-zA-Zа-яА-Я0-9ії])[-a-zA-Zа-яА-Я0-9ії]+?:\'.+?\'(?=\\S|\\s)'
-    'name': 'constant.language.todotxt.extension.function'
+    'name': 'constant.language.extension.function.todotxt'
   }
   {
     # Context
@@ -133,7 +134,7 @@
     # bar @foo-boo
     # ```
     'match': '(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)@[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
-    'name': 'entity.name.tag.todotxt.context.keyword'
+    'name': 'entity.name.tag.context.keyword.todotxt'
   }
   {
     # Context with quotes
@@ -143,7 +144,7 @@
     # bar @'foo bar'
     # ```
     'match': '(?<=^|\\s|\\S)@\'.+?\'(?=\\S|\\s)'
-    'name': 'entity.name.tag.todotxt.context.keyword'
+    'name': 'entity.name.tag.context.keyword.todotxt'
   }
   {
     # Project
@@ -154,7 +155,7 @@
     # bar +foo-boo
     # ```
     'match': '(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)\\+[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
-    'name': 'entity.name.tag.todotxt.project.variable'
+    'name': 'entity.name.tag.project.variable.todotxt'
   }
   {
     # Project with quotes
@@ -164,7 +165,7 @@
     # bar +'foo bar'
     # ```
     'match': '(?<=^|\\s|\\S)\\+\'.+?\'(?=\\S|\\s)'
-    'name': 'entity.name.tag.todotxt.project.variable'
+    'name': 'entity.name.tag.project.variable.todotxt'
   }
   {
     # Allow Cyrillic letter 'x'
@@ -199,4 +200,3 @@
     'name': 'comment.line.todotxt'
   }
 ]
-'scopeName': 'text.todotxt'
