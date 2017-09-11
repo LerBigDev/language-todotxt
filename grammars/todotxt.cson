@@ -61,8 +61,12 @@
     # ```
     # t:yyyy-mm-dd
     # ```
-    'match': '(?<=\\s|[^0-9]|^)t:\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
+    'match': '(?<=\\s|[^0-9]|^)t(:)\\d{4}(-)\\d{2}(-)\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.date.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.separator.colon.key-value.todotxt'
+      '2': 'name': 'punctuation.separator.dash.date.todotxt'
+      '3': 'name': 'punctuation.separator.dash.date.todotxt'
   }
   {
     # Date 2
@@ -71,8 +75,11 @@
     # ```
     # yyyy-mm-dd
     # ```
-    'match': '(?<=\\s|[^0-9]|^)\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
+    'match': '(?<=\\s|[^0-9]|^)\\d{4}(-)\\d{2}(-)\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.date.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.separator.dash.date.todotxt'
+      '2': 'name': 'punctuation.separator.dash.date.todotxt'
   }
   {
     # Date time 1
@@ -81,8 +88,10 @@
     # ```
     # hh-mm
     # ```
-    'match': '(?<=\\s|[^0-9]|^)\\d{2}-\\d{2}(?=\\s|[^0-9])'
+    'match': '(?<=\\s|[^0-9]|^)\\d{2}(-)\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.date.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.separator.dash.date.todotxt'
   }
   {
     # Date time period
@@ -91,8 +100,12 @@
     # ```
     # hh-mm-hh-mm
     # ```
-    'match': '(?<=\\s|[^0-9]|^)\\d{2}-\\d{2}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
+    'match': '(?<=\\s|[^0-9]|^)\\d{2}(-)\\d{2}(-)\\d{2}(-)\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.date.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.separator.dash.date.todotxt'
+      '2': 'name': 'punctuation.separator.dash.date.todotxt'
+      '3': 'name': 'punctuation.separator.dash.date.todotxt'
   }
   {
     # Due to date
@@ -101,8 +114,12 @@
     # ```
     # due:yyyy-mm-dd
     # ```
-    'match': '(?<=\\s|[^0-9]|^)due:\\d{4}-\\d{2}-\\d{2}(?=\\s|[^0-9])'
+    'match': '(?<=\\s|[^0-9]|^)due(:)\\d{4}(-)\\d{2}(-)\\d{2}(?=\\s|[^0-9])'
     'name': 'constant.language.due.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.separator.colon.key-value.todotxt'
+      '2': 'name': 'punctuation.separator.dash.date.todotxt'
+      '3': 'name': 'punctuation.separator.dash.date.todotxt'
   }
   {
     # Extension
@@ -112,8 +129,10 @@
     # ```
     # bar goo-bar:foo-bar
     # ```
-    'match': '(?<!http:\\/\\/)(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)[-a-zA-Zа-яА-Я0-9ії]+?:[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
+    'match': '(?<!http:\\/\\/)(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)[-a-zA-Zа-яА-Я0-9ії]+?(:)[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
     'name': 'constant.language.extension.function.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.separator.colon.key-value.todotxt'
   }
   {
     # Extension with quotes
@@ -122,8 +141,10 @@
     # ```
     # bar 'goo bar':'foo bar'
     # ```
-    'match': '(?<=^|[^-a-zA-Zа-яА-Я0-9ії])[-a-zA-Zа-яА-Я0-9ії]+?:\'.+?\'(?=\\S|\\s)'
+    'match': '(?<=^|[^-a-zA-Zа-яА-Я0-9ії])[-a-zA-Zа-яА-Я0-9ії]+?(:)\'.+?\'(?=\\S|\\s)'
     'name': 'constant.language.extension.function.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.separator.colon.key-value.todotxt'
   }
   {
     # Context
@@ -133,8 +154,10 @@
     # foo bar @goo
     # bar @foo-boo
     # ```
-    'match': '(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)@[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
+    'match': '(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)(@)[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
     'name': 'entity.name.tag.context.keyword.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.definition.variable.todotxt'
   }
   {
     # Context with quotes
@@ -143,8 +166,10 @@
     # ```
     # bar @'foo bar'
     # ```
-    'match': '(?<=^|\\s|\\S)@\'.+?\'(?=\\S|\\s)'
+    'match': '(?<=^|\\s|\\S)(@)\'.+?\'(?=\\S|\\s)'
     'name': 'entity.name.tag.context.keyword.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.definition.variable.todotxt'
   }
   {
     # Project
@@ -154,8 +179,10 @@
     # foo bar +goo
     # bar +foo-boo
     # ```
-    'match': '(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)\\+[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
+    'match': '(?<=[^-a-zA-Zа-яА-Я0-9ії]|^)(\\+)[-a-zA-Zа-яА-Я0-9ії]+?(?=[^-a-zA-Zа-яА-Я0-9ії])'
     'name': 'entity.name.tag.project.variable.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.definition.variable.todotxt'
   }
   {
     # Project with quotes
@@ -174,7 +201,7 @@
     # ```
     # x foo bar
     # ```
-    'match': '^\\s*?(x|х|х)\\s.*$'
+    'match': '^\\s*(x|х)\\s.*$'
     'name': 'comment.line.todotxt'
   }
   {
@@ -196,7 +223,9 @@
     # # foo bar
     # bar bar  # goo
     # ```
-    'match': '#.*$'
-    'name': 'comment.line.todotxt'
+    'match': '(#).*$'
+    'name': 'comment.line.number-sign.todotxt'
+    'captures':
+      '1': 'name': 'punctuation.definition.comment.todotxt'
   }
 ]
