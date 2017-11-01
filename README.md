@@ -5,6 +5,17 @@ This is for comfort work with Todo.TXT-formatted `*.txt` files.
 If you don't know anything about Todo.TXT, go to [TodoTXT.com](http://todotxt.com) and read all about it! It's worth it. :smile:
 
 
+
+## Install
+
+**Note (IMPORTANT):** This is syntax (language) plugin for great text editor [Atom](http://atom.io). It's maybe suitable for Sublime Text 3 (but it's not exactly), but not more
+
+**Install variant 1:** Copy source code to your **Atom**'s plugins folder. For example, to: `%UserProfilePath%/atom/packages/*`
+
+**Install variant 2 (PREFERRED):** Use **Atom's Package Manager** inside Atom, or it's CLI-version, `apm`
+
+
+
 ## Features
 
 - Support of Ukrainian & Russian symbols
@@ -111,6 +122,11 @@ span.syntax--todotxt.syntax--priority {
 ```
 
 You can init or override only selectors you need.
+
+
+## Contributors
+
+- [Alhadis](https://github.com/Alhadis)
 
 
 
