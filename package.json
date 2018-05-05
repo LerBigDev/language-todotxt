@@ -1,10 +1,10 @@
 {
   "name": "language-todotxt-plus",
-  "version": "1.2.1",
+  "version": "1.2.0",
   "description": "Syntax for Todo.TXT. Maaaany goooood additions!!!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LerBigDev/language-todotxt-plus.git"
+    "url": "git+http://github.com/LerBigDev/language-todotxt-plus.git"
   },
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
