@@ -1,6 +1,6 @@
 # Language Todo.TXT Plus - Syntax highlighting for Todo.TXT
 
-This is for comfort work with Todo.TXT-formatted `*.txt` files.
+This is for comfort work with Todo.TXT-formatted `*.todo.txt` files.
 
 If you don't know anything about Todo.TXT, go to [TodoTXT.com](http://todotxt.com) and read all about it! It's worth it. :smile:
 
@@ -16,12 +16,19 @@ If you don't know anything about Todo.TXT, go to [TodoTXT.com](http://todotxt.co
 
 
 
+## Usage
+
+- Create file `<someFileName>.todo.txt`, where `<someFileName>` - any name you want :smile:
+- Write you To-do according to general Todo.TXT rules (see http://todotxt.com) + my features (like subtasks) & be more productive!
+
+
+
 ## Features
 
 - Support of Ukrainian & Russian symbols
 - Add **comments**, **failed tasks**, **bold** & **italic** emphasis, **raw**, **strikethrough**
 - Projects, contexts and extensions can contain only letters and dashes: `foo-bar:goo-moo @foo-bar +goo-moo`
-- Support of indentation
+- Support of indentation (subproject & subtasks)
 
   ```TodoTXT
   foo bar @Monaco
@@ -124,6 +131,13 @@ span.syntax--todotxt.syntax--priority {
 You can init or override only selectors you need.
 
 
+
+## To-do
+
+_Here will be things that need to be done in nearest future..._
+
+
+
 ## Contributors
 
 - [Alhadis](https://github.com/Alhadis)
@@ -135,3 +149,9 @@ You can init or override only selectors you need.
 For more info, write me: `git.lerbigdev at gmail.com`
 
 With best regards, your LerDev :smile:
+
+
+
+## Goodbye!
+
+Hope to see you again :smile:
