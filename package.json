@@ -4,7 +4,7 @@
   "description": "Syntax for Todo.TXT. Maaaany goooood additions!!!",
   "repository": {
     "type": "git",
-    "url": "git+http://github.com/LerBigDev/language-todotxt-plus.git"
+    "url": "https://github.com/LerBigDev/language-todotxt-plus.git"
   },
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
